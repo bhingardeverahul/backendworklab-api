@@ -39,7 +39,7 @@ app.post('/signup',upload,async(req, res) => {
   const{email}=req.body
   try {
     // const newPassword = await securePassword(req.body.password);
-    const token=jwt.sign({email:email},process.env.SECRET_KEY, {expiresIn:"5min"})
+    const token=jwt.sign({email:email},process.env.SECRET_KEY, {expiresIn:"1min"})
     // const token = jwt.sign({email:email}, process.env.SECRET_KEY,)
     const newPassword =await bcrypt.hash(req.body.password,10);
     const user=new Users({
