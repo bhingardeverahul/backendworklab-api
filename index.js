@@ -74,7 +74,7 @@ app.post('/signup',upload,async(req, res) => {
         from:process.env.EMAIL_VERIFY,
         to:user.email,
         subject:'For Verification mail',
-        html:`<p>Hii ${user.name}, please click here to <a href=http://localhost:3000/verify/${token}> Verify </a> your mail.</p>`
+        html:`<p>Hii ${user.name}, please click here to <a href=https://backendapi-worklb.onrender.com/verify/${token}> Verify </a> your mail.</p>`
     }
     transporter.sendMail(mailOptions, function(error,info){
         if(error){
@@ -215,7 +215,7 @@ app.post('/forgotpassword', (req, res) => {
           from:process.env.EMAIL_VERIFY,
           to:user.email,
           subject: 'Reset Password Link',
-          html: `<p>Hii ${user.name},Please click here to <a href=http://localhost:3000/resetpassword/${user.id}/${token}> Verify </a> your mail.</p>`
+          html: `<p>Hii ${user.name},Please click here to <a href=https://backendapi-worklb.onrender.com/resetpassword/${user.id}/${token}> Verify </a> your mail.</p>`
         };
         
         transporter.sendMail(mailOptions, function(error, info){
@@ -266,7 +266,7 @@ try {
       from:process.env.EMAIL_VERIFY,
       to:userData.email,
       subject:'For Checking mail already register or not',
-      html:`<p>Hii ${userData.name}, please click here to <a href=http://localhost:3000/verify?${userData._id}> Verify </a> your mail.</p>`
+      html:`<p>Hii ${userData.name}, please click here to <a href=https://backendapi-worklb.onrender.com/verify?${userData._id}> Verify </a> your mail.</p>`
   }
   transporter.sendMail(mailOptions, function(error,info){
       if(error){
