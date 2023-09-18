@@ -1,4 +1,3 @@
-
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
@@ -12,8 +11,8 @@ require("dotenv").config()
 const userAuth=require("./middleware/auth")
 var cors = require('cors')
  app.use(express.json())
- app.use("view engine","ejs")
- app.set("views",path.join(__dirname,"./Views"))
+ app.set("view engine","ejs")
+ app.set("views",path.join(__dirname,"./views"))
 
 app.use(cors())
 const nodemailer = require("nodemailer");
