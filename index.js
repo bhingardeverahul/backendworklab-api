@@ -11,8 +11,8 @@ require("dotenv").config()
 const userAuth=require("./middleware/auth")
 var cors = require('cors')
  app.use(express.json())
- app.set("view engine","ejs")
- app.set("views",path.join(__dirname,"./views"))
+ // app.set("view engine","ejs")
+ // app.set("views",path.join(__dirname,"./views"))
 
 app.use(cors())
 const nodemailer = require("nodemailer");
@@ -117,7 +117,7 @@ app.get('/verify/:token',async(req,res)=>{
           });
 
           if (saveEmail) {
-            res.render("verifylogin")
+            // res.render("verifylogin")
             success=true;
           res.status(200).json({success, message: "Email Verification Success" });
           }
